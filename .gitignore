@@ -2,3 +2,6 @@
 .claude/
 *.aep
 *.prproj
+
+# protótipo local (tem a fonte Integral CF embutida: não publicar)
+prototipo/
