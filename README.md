@@ -1,6 +1,6 @@
 # jackdsgn.github.io
 
-Portfólio de motion design de Jose Jackson (Jackdsgn), publicado no GitHub Pages em https://jackdsgn.github.io/.
+Portfólio de motion design de Jose Jackson, com a marca **lopes.motion**, publicado no GitHub Pages em https://jackdsgn.github.io/.
 
 Site estático, sem etapa de build: HTML, CSS e JavaScript puros. O GitHub Pages publica a branch `main` direto da raiz.
 

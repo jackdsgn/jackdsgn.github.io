@@ -1,4 +1,4 @@
-/* Jackdsgn · medição (Meta Pixel + Google Analytics 4)
+/* lopes.motion · medição (Meta Pixel + Google Analytics 4)
    Nada carrega antes do visitante aceitar os cookies (LGPD).
    Para ativar, preencha os IDs abaixo. Vazio = medição desligada e sem aviso de cookies. */
 const ANALYTICS = {
@@ -57,7 +57,7 @@ const ANALYTICS = {
   function pageView() {
     const p = currentProject();
     const view = p ? 'case' : (location.hash === '#sobre' ? 'sobre' : 'home');
-    if (window.gtag) window.gtag('event', 'page_view', { page_location: location.href, page_title: p ? p.title + ' | Jackdsgn' : document.title, view });
+    if (window.gtag) window.gtag('event', 'page_view', { page_location: location.href, page_title: p ? p.title + ' | lopes.motion' : document.title, view });
     if (window.fbq) window.fbq('track', 'PageView');
     if (p) window.track('view_case', { project: p.title, area: p.area, client: p.client }, 'ViewContent');
   }

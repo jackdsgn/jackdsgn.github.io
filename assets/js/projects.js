@@ -1,4 +1,4 @@
-/* Jackdsgn · projetos do portfólio. Para adicionar um projeto, copie um bloco e ajuste os campos. */
+/* lopes.motion · projetos do portfólio. Para adicionar um projeto, copie um bloco e ajuste os campos. */
 const PROJECTS=[
  {slug:'blips-black',title:'Blips · Black do Empreendedor',area:'Ad de campanha · E-commerce',client:'Blips',year:'2026',service:'Motion design · UI animation · Direção de arte',category:'Crédito e equipamentos',
   media:[{v:'blackemp',full:'blackemp-full',ar:'16/9',fmt:'16:9'},{v:'blackemp-v',full:'blackemp-v-full',ar:'9/16',fmt:'9:16'}],ai:false,

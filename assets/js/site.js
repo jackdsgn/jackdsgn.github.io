@@ -1,4 +1,4 @@
-/* Jackdsgn · site · comportamento */
+/* lopes.motion · site · comportamento */
 const WA_NUM='5534984259509';
 const WA_MSG={
   hero:'Oi, Jack! Vi seu portfólio e quero fazer um vídeo. Pode me passar mais detalhes?',
