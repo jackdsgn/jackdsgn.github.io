@@ -1,5 +1,13 @@
 /* Jackdsgn · projetos do portfólio. Para adicionar um projeto, copie um bloco e ajuste os campos. */
 const PROJECTS=[
+ {slug:'blips-black',title:'Blips · Black do Empreendedor',area:'Ad de campanha · E-commerce',client:'Blips',year:'2026',service:'Motion design · UI animation · Direção de arte',category:'Crédito e equipamentos',
+  media:[{v:'blackemp',full:'blackemp-full',ar:'16/9',fmt:'16:9'},{v:'blackemp-v',full:'blackemp-v-full',ar:'9/16',fmt:'9:16'}],ai:false,
+  oque:'Filme de 20s para a Black do Empreendedor, campanha de ofertas da loja online da Blips (cv.blips.com.br), entregue em 16:9 e 9:16. A peça mostra a loja funcionando no celular: ofertas em equipamentos, o primeiro visitante ao vivo e o primeiro pedido.',
+  porque:'Anunciar a campanha de ofertas mostrando a loja em ação, com prova de movimento real, em vez de só listar descontos.',
+  como:{intro:'A loja no celular é o palco da campanha:',pilares:[['O celular como vitrine','A tela de bloqueio acende às 9:41 e abre a loja: as ofertas aparecem dentro do produto que o cliente vai usar.'],['Prova ao vivo','"Ao vivo agora: 1º visitante na loja" e a notificação "Pedido #1001 — R$ 18.990,00" mostram a campanha acontecendo.'],['Preto e amarelo da Black','Fundo preto, brilho amarelo da marca Blips e o título "Black do Empreendedor" marcado em bloco amarelo.']]},
+  ads:{yes:true,text:'Campanha em 16:9 para YouTube e site e em 9:16 para Reels e Stories, fechando com a marca e o endereço cv.blips.com.br.'},
+  funil:[['0–3s','Marca','O logo da Blips se monta na tela.'],['3–10s','Produto','O celular acende e abre a loja, com ofertas como a Impressora 3D Vuze 5050 e a Plotter de Recorte Vuze 120 cm.'],['10–13s','Prova','"Ao vivo agora: 1º visitante na loja", com o painel em tempo real.'],['13–16s','Campanha','"Black do Empreendedor", com oferta por tempo limitado.'],['16–18s','Resultado','Notificação do primeiro pedido: "Pedido #1001 — R$ 18.990,00".'],['18–20s','Assinatura','Blips, Black do Empreendedor e cv.blips.com.br.']],
+  impacto:null,causa:null},
  {slug:'fin-jack',title:'Fin Jack · Lançamento',area:'Ad de produto · App financeiro',client:'Projeto pessoal',year:'2026',service:'Motion design · UI animation · IA generativa',category:'Fintech / App',
   media:[{v:'finjack',full:'finjack-full',ar:'9/16',fmt:'9:16'}],ai:true,
   oque:'Vídeo vertical de 24s para o lançamento do Fin Jack, app de finanças pessoais com a promessa "Seu dinheiro, organizado do seu jeito". A peça mostra o produto funcionando: saldo, previsibilidade, novo lançamento, categorias e calendário.',

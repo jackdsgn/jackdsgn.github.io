@@ -53,8 +53,8 @@ function mediaEl(m){
 
 /* ---- ambiente de projetos: fileiras em velocidades diferentes ---- */
 const ROWS=[
-  {h:'s',dir:-1,speed:38,items:[['findata',0],['informei',0],['rubra',0],['saas-together',0],['ideal-cut120',0]]},
-  {h:'l',dir:1,speed:26,items:[['fin-jack',0],['blips-vuze',0],['rubra',1],['escola-do-breno',0],['blips-acredita',0],['ideal-flatbed',0],['blips-i1600',0]]},
+  {h:'s',dir:-1,speed:38,items:[['blips-black',0],['findata',0],['informei',0],['rubra',0],['saas-together',0],['ideal-cut120',0]]},
+  {h:'l',dir:1,speed:26,items:[['fin-jack',0],['blips-black',1],['blips-vuze',0],['rubra',1],['escola-do-breno',0],['blips-acredita',0],['ideal-flatbed',0],['blips-i1600',0]]},
   {h:'s',dir:-1,speed:46,items:[['ideal-marca',0],['esmi',0],['voce-sabia',0],['esmi',1],['apresentacao-jack',0]]},
 ];
 const rowsEl=document.getElementById('rows');const rowState=[];
