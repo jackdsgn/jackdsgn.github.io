@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose Jackson · Product Designer (UX/UI)</title>
+<meta name="description" content="Portfólio de Jose Jackson — Product Designer (UX/UI) com motion como diferencial. Cases de produtos web e mobile.">
+<meta property="og:title" content="Jose Jackson · Product Designer (UX/UI)">
+<meta property="og:description" content="Cases de produtos web e mobile: pesquisa, fluxos, interface, protótipo e motion.">
+<meta property="og:image" content="https://jackdsgn.github.io/ux/assets/cava.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000;--ink:#fff;--muted:#9b9b9b;--soft:#bdbdbd;--line:rgba(255,255,255,.12);--card:#111;--chip:#1c1c1c;
+  --ease:cubic-bezier(.16,1,.3,1);--w:560px
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Satoshi,Urbanist,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto 0;height:520px;pointer-events:none;z-index:0;
+  background:radial-gradient(55% 70% at 50% -18%,rgba(150,128,104,.42),rgba(70,58,48,.16) 45%,transparent 75%)}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:6px}
+.wrap{position:relative;z-index:1;max-width:var(--w);margin:0 auto;padding:0 20px}
+p{margin:0}h1,h2,h3{margin:0;font-weight:500}
+.g{color:var(--muted)}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .links{display:flex;gap:16px}
+nav .links a{font-size:12px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--muted);padding:8px 0;transition:color .2s}
+nav .links a.on,nav .links a:hover{color:var(--ink)}
+.eyes{display:flex;gap:4px;cursor:default}
+.eye{width:22px;height:34px;border-radius:11px;background:#fff;position:relative;overflow:hidden;animation:blink 5s infinite}
+.eye i{position:absolute;width:7px;height:7px;border-radius:50%;background:#000;left:50%;top:50%;margin:-3.5px 0 0 -3.5px;transition:transform .08s linear}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+
+/* hero */
+.hero{padding:72px 0 0}
+.who{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.who img{width:40px;height:40px;border-radius:10px;object-fit:cover;object-position:50% 20%}
+.who b{font-weight:500;font-size:17px}
+.hero h1{font-size:clamp(32px,6.4vw,40px);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin-bottom:20px}
+.hero h1 .g{font-weight:500}
+.lead{color:var(--soft);font-size:17px;line-height:1.5}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;font:500 15px Satoshi,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.w{background:#fff;color:#000}.btn.d{background:var(--chip);color:#fff}.btn.d:hover{background:#262626}
+.mouse{width:26px;height:44px;border:2px solid #fff;border-radius:14px;margin:72px auto 48px;position:relative}
+.mouse::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:wheel 1.8s var(--ease) infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(-4px)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* section titles */
+h2{font-size:18px;font-weight:500;letter-spacing:-.01em;margin-bottom:28px}
+section{padding:24px 0 72px}
+
+/* project cards */
+.proj{display:block;text-decoration:none;margin-bottom:72px}
+.media{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:var(--card)}
+.media img,.media video{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.proj:hover .media img,.proj:hover .media video{transform:scale(1.04)}
+.proj h3{font-size:22px;font-weight:500;letter-spacing:-.02em;margin:28px 0 6px}
+.proj .cat{color:var(--muted);font-size:15px}
+.proj .more{display:inline-block;margin-top:10px;font-size:14px;color:var(--soft);opacity:0;transform:translateX(-6px);transition:.3s var(--ease)}
+.proj:hover .more,.proj:focus-visible .more{opacity:1;transform:none}
+/* drawn covers */
+.dr{position:absolute;inset:0;overflow:hidden}
+.dr .ph{position:absolute;bottom:-26%;width:27%;aspect-ratio:9/19;border-radius:22px;background:#fff;border:5px solid #0b0b0b;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.dr .ph i{display:block;margin:14% 10% 0;height:7%;border-radius:6px;background:#eee}
+.dr .ph i:nth-child(2){height:24%;background:var(--acc)}
+.dr .ph i:nth-child(3){height:11%}.dr .ph i:nth-child(4){height:11%;width:55%}
+.dr .win{position:absolute;left:10%;right:10%;top:16%;bottom:-8%;border-radius:10px;background:#fff;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.dr .win::before{content:"";display:block;height:22px;border-radius:10px 10px 0 0;background:#ececec}
+.dr .win i{display:block;margin:4% 6% 0;height:9%;border-radius:5px;background:#f1f1f1}
+.dr .win i:first-of-type{width:40%;height:13%;background:var(--acc)}
+.dr .lbl{position:absolute;left:7%;top:12%;font-weight:700;font-size:clamp(20px,4.6vw,28px);letter-spacing:-.03em;color:#111;line-height:1}
+
+/* services */
+.svc>div{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc>div:first-child{padding-top:0}
+.svc svg{flex:none;margin-top:3px}
+.svc b{display:block;font-weight:500;font-size:17px}
+.svc p{color:var(--muted)}
+
+/* stack */
+.stack{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.stack>div{display:flex;gap:14px;padding:22px 12px 22px 0;border-bottom:1px solid var(--line)}
+.ic{flex:none;width:24px;height:24px;border-radius:6px;display:grid;place-items:center;font:700 11px Satoshi,sans-serif}
+.ic svg{width:15px;height:15px}
+.stack b{display:block;font-weight:500}
+.stack span{color:var(--muted);display:block;line-height:1.45}
+
+/* contact rows */
+.ct>div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ct>div:first-child{border-top:1px solid var(--line)}
+.ct small{display:block;color:var(--muted);font-size:14px}
+.ct b{font-weight:500;user-select:all;overflow-wrap:anywhere}
+
+footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:40px 0;font-size:12px;color:var(--soft)}
+footer div{display:flex;gap:14px}footer a{text-decoration:none;color:var(--soft)}footer a:hover{color:#fff}
+
+/* case page */
+.view{display:none}.view.on{display:block}
+.case{padding-top:56px}
+.case h1{font-size:clamp(30px,6vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:700}
+.case .intro{font-size:18px;line-height:1.5;color:var(--soft);margin-top:18px}
+.case .intro b{color:#fff;font-weight:500}
+.sheet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:36px 0;padding:22px 0;border-block:1px solid var(--line)}
+.sheet small{display:block;color:var(--muted);font-size:13px;margin-bottom:4px}
+.sheet b{font-weight:500;font-size:15px;line-height:1.35;display:block}
+.case .media{margin-bottom:8px}
+.case .media.tall{aspect-ratio:9/16;max-width:320px;margin-inline:auto}
+.blk{padding-top:44px}
+.blk h3{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+.blk p{color:var(--soft)}.blk p+p{margin-top:12px}
+.blk p b,.blk li b{color:#fff;font-weight:500}
+.blk ul{list-style:none;padding:0;margin:14px 0 0}
+.blk li{position:relative;padding-left:18px;margin:10px 0;color:var(--soft)}
+.blk li::before{content:"•";position:absolute;left:0;color:#fff}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px}
+.flow span{padding:6px 12px;border-radius:999px;background:var(--chip);font-size:14px}
+.flow em{font-style:normal;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+th,td{text-align:left;padding:10px 8px 10px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--soft)}
+th{font-size:13px;font-weight:500;color:var(--muted)}
+.note{margin-top:16px;font-size:14px;color:var(--muted)}
+.next{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:72px;padding:24px 0;border-block:1px solid var(--line);text-decoration:none}
+.next small{display:block;color:var(--muted);font-size:14px}.next b{font-size:22px;font-weight:500;letter-spacing:-.02em}
+.about{padding-top:56px}
+.about .who img{width:72px;height:72px;border-radius:14px}
+
+/* appear animations (estilo Framer) */
+.ap{opacity:0;filter:blur(8px);transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.ap.in{opacity:1;filter:none;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ap{opacity:1;filter:none;transform:none}}
+@media (max-width:520px){
+  .sheet{grid-template-columns:1fr 1fr}
+  .stack{grid-template-columns:1fr}
+  .hero{padding-top:48px}
+  table{font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Principal">
+    <div class="links"><a href="#" data-nav="home" class="on">HOME</a><a href="#sobre" data-nav="sobre">SOBRE</a></div>
+    <div class="eyes" aria-hidden="true"><div class="eye"><i></i></div><div class="eye"><i></i></div></div>
+  </nav>
+
+  <main id="v-home" class="view on">
+    <div class="hero">
+      <div class="who ap"><img src="../media/retrato.jpg" alt="Foto de Jose Jackson"><b>Jose Jackson</b></div>
+      <h1 class="ap">Produto com propósito. <span class="g">UX/UI, design systems e motion.</span></h1>
+      <p class="lead ap">Product Designer que desenha apps e plataformas web do problema à tela: pesquisa, fluxos, interface, protótipo e página publicada. Mais de 6 anos em motion design — o movimento entra para explicar, não para enfeitar.</p>
+      <div class="btns ap"><a class="btn w" href="#contato" data-scroll>Entre em contato</a><a class="btn d" href="#sobre">Sobre mim</a></div>
+    </div>
+    <div class="mouse ap" aria-hidden="true"></div>
+
+    <section id="cases">
+      <h2 class="ap">Principais Projetos</h2>
+      <div id="grid"></div>
+    </section>
+
+    <section>
+      <h2 class="ap">Serviços</h2>
+      <div class="svc">
+        <div class="ap"><svg width="20" height="20" viewBox="0 0 24 24" fill="#F75C03"><rect x="5" y="2" width="14" height="20" rx="3"/></svg><p><b>UX/UI de produto</b>Pesquisa, arquitetura de informação, fluxos e interfaces para apps e plataformas web, com protótipo navegável.</p></div>
+        <div class="ap"><svg width="20" height="20" viewBox="0 0 24 24" fill="#4C8DFF"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><circle cx="17" cy="17" r="4"/></svg><p><b>Design systems com IA</b>Tokens, componentes e documentação que mantêm o produto consistente e aceleram o time.</p></div>
+        <div class="ap"><svg width="20" height="20" viewBox="0 0 24 24" fill="#F7B500"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><p><b>Web design e front-end</b>Landing pages e sites pensados em UX, entregues desenvolvidos, responsivos e funcionando.</p></div>
+        <div class="ap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4C8DFF" stroke-width="2.4" stroke-linecap="round"><path d="M3 12c3-6 6-6 9 0s6 6 9 0"/></svg><p><b>UX Motion & Microinterações</b>Transições, feedback visual e microinterações que guiam o usuário e explicam o estado da interface.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="ap">Stack</h2>
+      <div class="stack" id="stack"></div>
+    </section>
+
+    <section id="contato">
+      <h2 class="ap">Contato</h2>
+      <p class="lead ap" style="margin-bottom:24px">Aberto a vagas de UX/UI e Product Design — CLT, PJ ou freela, presencial em Uberlândia, híbrido ou remoto.</p>
+      <div class="ct ap">
+        <div><p><small>E-mail</small><b>gestaojack@hotmail.com</b></p><button class="btn d" data-copy="gestaojack@hotmail.com">Copiar</button></div>
+        <div><p><small>WhatsApp</small><b>(34) 98425-9509</b></p><a class="btn w" href="https://wa.me/5534984259509" target="_blank" rel="noopener">Conversar</a></div>
+      </div>
+    </section>
+  </main>
+
+  <main id="v-case" class="view"></main>
+
+  <main id="v-sobre" class="view">
+    <div class="about">
+      <div class="who ap"><img src="../media/retrato.jpg" alt="Foto de Jose Jackson"><b>Jose Jackson</b></div>
+      <h1 class="ap" style="font-size:clamp(30px,6vw,40px);line-height:1.08;letter-spacing:-.035em;font-weight:700">Raciocínio de produto. <span class="g" style="font-weight:500">Acabamento de motion.</span></h1>
+      <div class="blk ap"><p>Sou Product Designer (UX/UI) em Uberlândia, MG. Desenho apps e plataformas web começando pelo problema: quem usa, o que precisa resolver e como medir se funcionou.</p><p>Venho de mais de 6 anos em edição de vídeo e motion design. Isso me deu duas coisas que levo para o produto: narrativa — cada tela conta um passo da jornada — e movimento com função, em transições e microinterações que explicam o que está acontecendo.</p><p>Hoje trabalho com IA no processo inteiro: pesquisa, design system, documentação e desenvolvimento das páginas que entrego publicadas.</p></div>
+      <div class="blk ap"><h3>Formação e atuação</h3><ul>
+        <li><b>Pós-graduação EBAC:</b> projeto final de produto digital (Itaú Educa+) com pesquisa, estratégia, design system e protótipo.</li>
+        <li><b>Blips (2026–atual):</b> motion design, vídeo e páginas de produto com 3D para equipamentos.</li>
+        <li><b>Freela:</b> plataforma web, landing pages e motion para marcas e cooperativas.</li></ul></div>
+      <div class="btns ap"><a class="btn w" href="#cases">Ver cases</a><a class="btn d" href="https://jackdsgn.github.io/" target="_blank" rel="noopener">Portfólio de motion ↗</a></div>
+    </div>
+  </main>
+
+  <footer><p>Todos direitos reservados - Jose Jackson</p><div><a href="#">HOME</a><a href="#sobre">SOBRE</a></div></footer>
+</div>
+
+<script>
+{
+const ICONS={claude:'m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z',openai:'M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z',figma:'M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z',framer:'M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z',html5:'M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z'};
+const svg=(k,c)=>`<svg viewBox="0 0 24 24" fill="${c}"><path d="${ICONS[k]}"/></svg>`;
+const STACK=[
+ ['Figma','Prototipação e design de interface',`<span class="ic" style="background:#fff">${svg('figma','#000')}</span>`],
+ ['Claude','IA no processo e no código',`<span class="ic" style="background:#D97757">${svg('claude','#fff')}</span>`],
+ ['ChatGPT','Pesquisa e conteúdo',`<span class="ic" style="background:#fff">${svg('openai','#000')}</span>`],
+ ['HTML, CSS e JS','Front-end com IA',`<span class="ic" style="background:#E34F26">${svg('html5','#fff')}</span>`],
+ ['Framer','No-code web design',`<span class="ic" style="background:#0A6CFF">${svg('framer','#fff')}</span>`],
+ ['After Effects','Motion e UI animation','<span class="ic" style="background:#00005B;color:#9999FF">Ae</span>'],
+ ['Photoshop','Edição de imagens','<span class="ic" style="background:#001E36;color:#31A8FF">Ps</span>'],
+ ['Illustrator','Ilustração e vetores','<span class="ic" style="background:#330000;color:#FF9A00">Ai</span>']
+];
+document.getElementById('stack').innerHTML=STACK.map(s=>`<div class="ap">${s[2]}<p><b>${s[0]}</b><span>${s[1]}</span></p></div>`).join('');
+
+const phones=(bg,acc,lbl)=>`<div class="dr" style="background:${bg};--acc:${acc}"><p class="lbl">${lbl}</p><div class="ph" style="right:30%;transform:rotate(-7deg)"><i></i><i></i><i></i><i></i></div><div class="ph" style="right:7%;bottom:-20%"><i></i><i></i><i></i><i></i></div></div>`;
+const browser=(bg,acc)=>`<div class="dr" style="background:${bg};--acc:${acc}"><div class="win"><i></i><i></i><i></i><i></i></div></div>`;
+
+const C=[
+{id:'itau-educa',title:'Itaú Educa+',cat:'App mobile · Pesquisa, UX/UI e protótipo',
+ cover:phones('linear-gradient(135deg,#FFB27A,#FF7A1A)','#202030','Educa+'),
+ h1:'Projeto Itaú Educa+',
+ intro:'Conceito de nova experiência dentro do <b>app Itaú</b>: trilhas, aulas e certificações em uma jornada gamificada de educação financeira e profissional — para quem está começando e para quem quer evoluir. <b>Sem novo app para baixar.</b>',
+ sheet:[['Cliente','Projeto acadêmico · EBAC'],['Ano','2026'],['Serviço','Pesquisa · UX/UI · Protótipo'],['Categoria','App mobile · Fintech']],
+ blocks:[
+ ['O problema','<p>A formação tradicional não acompanha o mercado. A desk research apontou falta de profissionais qualificados em tecnologia, inglês como gargalo e pouca experiência prática. O banco já tinha ativos de educação, mas espalhados fora do app — enquanto concorrentes já educavam seus clientes.</p><p><b>Oportunidade:</b> levar a educação para onde o cliente já está todos os dias.</p>'],
+ ['Para quem','<ul><li><b>Iniciante:</b> começa do zero e precisa de conceitos básicos, linguagem simples e passo a passo.</li><li><b>Avançado:</b> já tem base e quer aprofundar, acompanhar metas e conquistar certificações.</li></ul>'],
+ ['Ideação & Estratégia','<p>A solução foi estruturada em três pilares:</p><ul><li><b>Integração nativa:</b> feature dentro do app, aproveitando a base que já usa o banco diariamente.</li><li><b>Trilhas gamificadas:</b> progresso visível, conquistas e badges para engajamento e retenção.</li><li><b>Prática e conexão:</b> desafios reais, certificação e ponte com o ecossistema de inovação do banco.</li></ul>'],
+ ['Fluxo principal','<p>Caminho feliz prototipado de ponta a ponta, mais uma tarefa de remoção com confirmação.</p><div class="flow"><span>Home</span><em>→</em><span>Trilhas</span><em>→</em><span>Selecionar trilha</span><em>→</em><span>Ver aulas</span><em>→</em><span>Inscrever</span></div><div class="flow"><span>Minhas trilhas</span><em>→</em><span>Remover</span><em>→</em><span>Confirmar no modal</span></div><p style="margin-top:14px">Telas desenhadas: Inicial, Trilhas, Aula, Minhas trilhas, Certificação, Conquistas e Perfil.</p>'],
+ ['Microinterações','<p>Toggle, botão com hover, slider e remoção de item da lista com modal de confirmação — cada uma dá retorno claro do estado da ação.</p>'],
+ ['Como medir','<table><thead><tr><th>Necessidade</th><th>Tela</th><th>Métrica</th></tr></thead><tbody><tr><td>Começar sem se perder</td><td>Inicial e Trilhas</td><td>Taxa de adoção</td></tr><tr><td>Manter o ritmo</td><td>Aula e Minhas trilhas</td><td>Conclusão e retenção semanal</td></tr><tr><td>Ter reconhecimento</td><td>Certificação e Conquistas</td><td>Certificados compartilhados</td></tr><tr><td>Confiar na experiência</td><td>Toda a jornada</td><td>NPS</td></tr></tbody></table><p style="margin-top:14px">Plano de validação: avaliação heurística seguida de teste com usuários dos dois perfis.</p>'],
+ ['Resultado e aprendizado','<p>Entregue à banca com protótipo navegável no Figma, design system, pitch deck e documento de estratégia de produto.</p><p>O feedback da etapa anterior foi direto: a estratégia era clara, mas sem protótipo não dava para provar que funcionava. Refiz a entrega ligando cada tela a uma necessidade, um critério de aceitação e uma métrica. <b>Estratégia sem protótipo é só hipótese.</b></p><p class="note">Projeto acadêmico, conceito não oficial e sem vínculo com o Itaú Unibanco.</p>']
+ ]},
+{id:'cut120',title:'Vuze Cut120 · Blips',cat:'Web · Página de produto com exploração 3D',
+ cover:'<img src="assets/cut120.jpg" alt="Página da Vuze Cut120" style="object-position:right center">',
+ link:'https://blips-cut120-explore.jjplopes2026.chatgpt.site/',
+ h1:'Projeto Vuze Cut120',
+ intro:'Página de produto da <b>Blips</b> para a plotter de recorte Vuze Cut120. O scroll conduz por cada conjunto da máquina em 3D até que, no fim, <b>o ângulo é do visitante.</b>',
+ sheet:[['Cliente','Blips'],['Ano','2026'],['Serviço','UX · Web design · 3D · Front-end com IA'],['Categoria','Página de produto']],
+ blocks:[
+ ['O problema','<p>Plotter de recorte é compra técnica e de valor alto. Foto estática e ficha técnica não mostram o que cada parte faz — e o visitante chega ao comercial sem entender o produto.</p><p><b>Objetivo:</b> fazer a pessoa entender a máquina antes de conversar com a equipe Blips.</p>'],
+ ['Ideação & Estratégia','<ul><li><b>Scroll como narrativa:</b> seis capítulos — o encontro, o recorte, o percurso, o controle, o conjunto e o seu olhar. Cada um aproxima um conjunto da máquina.</li><li><b>Do guiado ao livre:</b> primeiro a página conduz; no último capítulo o visitante escolhe a parte (painel, cabeçote, tração, conexões, porta-rolos, cesto) e gira o modelo.</li><li><b>Vista explodida:</b> a estrutura se abre para mostrar como os conjuntos se relacionam, com aviso de que é ilustrativa.</li></ul>'],
+ ['Acessível e à prova de falha','<ul><li>Botão <b>Menos movimento</b> para quem prefere menos animação.</li><li>Vistas Frente e Traseira por botão, sem precisar arrastar.</li><li>Link para pular direto aos detalhes do produto.</li><li>Se o 3D não carrega, a página mostra a foto e os detalhes em texto, com opção de tentar de novo. Sem JavaScript, o conteúdo continua lá.</li></ul>'],
+ ['Texto que conduz','<p>Títulos em duas batidas — <i>"Olhe de perto. Vá além da superfície."</i>, <i>"Cada avanço. Uma direção."</i> — mantêm o ritmo do scroll. Cada capítulo termina com um rótulo do que está em destaque, e o fechamento leva à equipe comercial.</p>']
+ ]},
+{id:'cava',title:'CAVA · Vuze X15',cat:'Web · Landing page de conversão com 3D',
+ cover:'<img src="assets/cava.jpg" alt="Landing page da miniescavadeira Vuze X15">',
+ link:'https://jackdsgn.github.io/cava-vuze-x15/',
+ h1:'Projeto CAVA · Vuze X15',
+ intro:'Landing page conceito para a miniescavadeira Vuze X15-20S V2, com marca fictícia. A máquina em 3D se revela capítulo a capítulo e <b>cada seção leva ao pedido de orçamento.</b>',
+ sheet:[['Cliente','Conceito · marca fictícia'],['Ano','2026'],['Serviço','UX · Web design · 3D · Front-end com IA'],['Categoria','Landing page B2B']],
+ blocks:[
+ ['O problema','<p>Quem compra uma miniescavadeira — construção civil, paisagismo, agro, saneamento, locadoras — quer saber duas coisas: <b>ela cabe na minha obra? Ela faz o trabalho?</b> Uma ficha técnica em PDF não responde isso de relance.</p>'],
+ ['Ideação & Estratégia','<ul><li><b>Benefício antes do número:</b> "Pequena no porte. Grande na obra." vem com os números que provam: 1.100 mm de largura, giro de 360°, 1.693 mm de profundidade.</li><li><b>Um capítulo por pergunta:</b> giro, lança e caçamba, posto do operador, tração e medidas — sete seções com indicador de progresso.</li><li><b>Tudo leva ao orçamento:</b> CTA fixo no topo, repetido ao longo da página e formulário no fim.</li></ul>'],
+ ['Formulário pensado para o comercial','<ul><li>Só o essencial é obrigatório: nome, WhatsApp, e-mail e cidade/UF.</li><li>"Onde a máquina vai trabalhar" qualifica o lead sem parecer interrogatório.</li><li>O cliente escolhe o canal de retorno: WhatsApp ou e-mail.</li><li>Consentimento LGPD explícito e exemplos de formato nos campos.</li></ul>'],
+ ['Transparência','<p>O rodapé avisa que as imagens são renderizações de um modelo 3D e que a marca é fictícia — confiança também é decisão de UX.</p>']
+ ]},
+{id:'informativo',title:'Informativo do Cooperado · Unimed',cat:'Plataforma web · UX, web design e desenvolvimento',
+ cover:browser('linear-gradient(135deg,#7FD3A6,#00995D)','#00995D'),
+ h1:'Projeto Informativo do Cooperado',
+ intro:'Plataforma web para a <b>Unimed Uberlândia</b> publicar comunicados recorrentes aos médicos cooperados, com <b>acesso individual</b> e leitura confortável no celular e no desktop.',
+ sheet:[['Cliente','Unimed Uberlândia'],['Fase','V1 entregue'],['Serviço','UX · Web design · Desenvolvimento com IA'],['Categoria','Plataforma web · Saúde']],
+ blocks:[
+ ['O desafio','<p>Levar informação exclusiva dos cooperados, toda semana, a um público com pouco tempo, que lê no celular entre atendimentos — sem deixar o conteúdo aberto ao público.</p>'],
+ ['Ideação & Estratégia','<ul><li><b>Acesso individual:</b> login e senha por médico, para proteger informações exclusivas.</li><li><b>Leitura em qualquer tela:</b> layout responsivo pensado primeiro para o celular, sem perder a leitura no desktop.</li><li><b>Acessibilidade como base:</b> contraste, tamanho de texto e navegação por teclado desde o primeiro layout.</li></ul>'],
+ ['Próximo passo','<p>A V1 virou base para uma evolução: design system próprio, segurança, otimização e acessibilidade como ponto central, com entregas em sprints de 15 dias.</p>']
+ ]},
+{id:'fin-jack',title:'FIN JACK',cat:'App web + Android · Produto próprio com IA',
+ cover:'<video src="../media/finjack.mp4" poster="../media/finjack.jpg" muted loop playsinline preload="none" style="object-fit:contain;background:#0b0b0b"></video>',tall:'<video src="../media/finjack.mp4" poster="../media/finjack.jpg" muted loop playsinline autoplay></video>',
+ h1:'Projeto FIN JACK',
+ intro:'Produto próprio de gestão financeira. Os lançamentos entram por um <b>bot com IA no Telegram</b> — texto, áudio ou foto do comprovante — e viram painel na web e no Android. <b>Controle financeiro sem formulário.</b>',
+ sheet:[['Cliente','Projeto pessoal'],['Ano','2026'],['Serviço','Product design · Desenvolvimento com IA · Motion'],['Categoria','App web + Android']],
+ blocks:[
+ ['O problema','<p>Apps de finanças falham no mesmo ponto: registrar cada gasto dá trabalho, e o hábito morre em poucas semanas. <b>O atrito está na entrada de dados, não no gráfico.</b></p>'],
+ ['Ideação & Estratégia','<ul><li><b>Entrada sem formulário:</b> lançamentos diários, fixos, despesas e receitas informados em linguagem natural.</li><li><b>Um app que já está aberto:</b> o registro acontece no mensageiro que eu já uso, não em mais um app.</li><li><b>IA como interface:</b> a IA interpreta texto, áudio e comprovante, e também responde consultas.</li></ul>'],
+ ['Benchmark','<p>Engenharia reversa de um app de finanças do mercado para entender categorias, painel e relatórios — e cortar tudo que dependia de digitação manual.</p>'],
+ ['Status','<p>Em desenvolvimento, construído com agentes de IA. O vídeo acima é o anúncio de lançamento, com UI animation das telas do produto.</p>']
+ ]},
+{id:'findata',title:'Projeto FinData',cat:'Fintech · UI animation de dashboard',
+ cover:'<video src="../media/findata.mp4" poster="../media/findata.jpg" muted loop playsinline preload="none"></video>',
+ link:'https://vimeo.com/1222793501',linkLabel:'Assistir no Vimeo',
+ h1:'Projeto FinData',
+ intro:'Estudo de UI animation para o lançamento de um <b>dashboard fictício de finanças</b> pessoais e empresariais: transições fluidas e linguagem visual limpa para transmitir <b>clareza, controle e crescimento.</b>',
+ sheet:[['Cliente','Escola Motion Insider'],['Ano','2026'],['Serviço','UI animation · After Effects · Sound design'],['Categoria','Fintech / Interface digital']],
+ blocks:[
+ ['Ideação & Estratégia','<p>O desafio era fazer o público entender, em poucos segundos, o que o produto promete — com a interface se montando na frente de quem assiste:</p><ul><li><b>Ritmo e hierarquia:</b> narrativa de 9 cenas que alterna letterings de impacto com revelações da interface.</li><li><b>Transições como linguagem:</b> ícones, botões e cartões da própria UI disparam a cena seguinte — continuidade em vez de corte seco.</li><li><b>Profundidade e parallax:</b> movimento 3D na cena de gráficos para dar peso visual aos dados.</li></ul>'],
+ ['Por que isso importa em UX','<p>Os mesmos princípios valem no produto real: cada transição mostra de onde a informação veio e para onde foi. Meta mensal, previsão de custos e saldo unificado foram desenhados para serem lidos de relance.</p>']
+ ]}
+];
+
+const grid=document.getElementById('grid');
+grid.innerHTML=C.map(c=>`<a class="proj ap" href="#case-${c.id}"><div class="media">${c.cover}</div><h3>${c.title}</h3><p class="cat">${c.cat}</p><span class="more">Ver case completo →</span></a>`).join('');
+
+const vh=document.getElementById('v-home'),vc=document.getElementById('v-case'),vs=document.getElementById('v-sobre');
+const navs=document.querySelectorAll('[data-nav]');
+let io,vio;
+function observe(){
+  io?.disconnect();
+  io=new IntersectionObserver(es=>es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.view.on .ap:not(.in)').forEach(el=>io.observe(el));
+  vio?.disconnect();
+  vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}),{threshold:.3});
+  document.querySelectorAll('.view.on video').forEach(v=>vio.observe(v));
+}
+function show(v){[vh,vc,vs].forEach(x=>x.classList.toggle('on',x===v));navs.forEach(a=>a.classList.toggle('on',(a.dataset.nav==='sobre')===(v===vs)&&v!==vc))}
+function route(){
+  const h=location.hash.slice(1);
+  if(h.startsWith('case-')){
+    const i=C.findIndex(c=>c.id===h.slice(5));
+    if(i>-1){
+      const c=C[i],n=C[(i+1)%C.length];
+      vc.innerHTML=`<article class="case"><h1 class="ap">${c.h1}</h1><p class="intro ap">${c.intro}</p>
+      ${c.link?`<div class="btns ap"><a class="btn w" href="${c.link}" target="_blank" rel="noopener">${c.linkLabel||'Ver página publicada'} ↗</a></div>`:''}
+      <div class="sheet ap">${c.sheet.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join('')}</div>
+      <div class="media ap${c.tall?' tall':''}">${c.tall||c.cover}</div>
+      ${c.blocks.map(b=>`<div class="blk ap"><h3>${b[0]}</h3>${b[1]}</div>`).join('')}
+      <a class="next ap" href="#case-${n.id}"><span><small>Próximo projeto</small><b>${n.title}</b></span><span class="btn d">→</span></a></article>`;
+      show(vc);window.scrollTo(0,0);document.title=c.title+' · Jose Jackson';observe();return;
+    }
+  }
+  document.title='Jose Jackson · Product Designer (UX/UI)';
+  if(h==='sobre'){show(vs);window.scrollTo(0,0);observe();return}
+  const wasHome=vh.classList.contains('on');show(vh);observe();
+  const t=h&&document.getElementById(h);
+  if(t)requestAnimationFrame(()=>t.scrollIntoView());else if(!wasHome)window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+route();
+
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copiado'}catch(_){b.textContent='Selecione o texto'}
+  setTimeout(()=>b.textContent='Copiar',1800);
+}));
+
+// olhos que seguem o cursor (como na referência)
+const pupils=document.querySelectorAll('.eye i');
+window.addEventListener('pointermove',e=>{
+  pupils.forEach(p=>{const r=p.parentElement.getBoundingClientRect();const a=Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-(r.left+r.width/2));
+  p.style.transform=`translate(${Math.cos(a)*5}px,${Math.sin(a)*11}px)`});
+},{passive:true});
+}
+</script>
+</body>
+</html>

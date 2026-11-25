@@ -13,6 +13,7 @@ Site estático, sem etapa de build: HTML, CSS e JavaScript puros. O GitHub Pages
 | `assets/js/projects.js` | Lista de projetos e o conteúdo de cada case |
 | `assets/js/site.js` | Animações, rotas, física da Stack, WhatsApp |
 | `media/` | Vídeos e imagens otimizados |
+| `ux/` | Portfólio de UX/UI (Product Design), publicado em https://jackdsgn.github.io/ux/ |
 | `assets/img/og.jpg` | Imagem que aparece quando o link é compartilhado |
 
 ## Adicionar um projeto
