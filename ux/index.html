@@ -60,7 +60,9 @@ h2{font-size:18px;font-weight:500;letter-spacing:-.01em;margin-bottom:28px}
 section{padding:24px 0 72px}
 
 /* project cards */
-.proj{display:block;text-decoration:none;margin-bottom:72px}
+.item{margin-bottom:72px}
+.proj{display:block;text-decoration:none}
+.live{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
 .media{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:var(--card)}
 .media img,.media video{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .proj:hover .media img,.proj:hover .media video{transform:scale(1.04)}
@@ -261,7 +263,7 @@ const C=[
  ]},
 {id:'cut120',title:'Vuze Cut120 · Blips',cat:'Web · Página de produto com exploração 3D',
  cover:'<img src="assets/cut120.jpg" alt="Página da Vuze Cut120" style="object-position:right center">',
- link:'https://blips-cut120-explore.jjplopes2026.chatgpt.site/',
+ links:[['Ver site ao vivo','https://blips-cut120-explore.jjplopes2026.chatgpt.site/']],
  h1:'Projeto Vuze Cut120',
  intro:'Página de produto da <b>Blips</b> para a plotter de recorte Vuze Cut120. O scroll conduz por cada conjunto da máquina em 3D até que, no fim, <b>o ângulo é do visitante.</b>',
  sheet:[['Cliente','Blips'],['Ano','2026'],['Serviço','UX · Web design · 3D · Front-end com IA'],['Categoria','Página de produto']],
@@ -273,7 +275,7 @@ const C=[
  ]},
 {id:'cava',title:'CAVA · Vuze X15',cat:'Web · Landing page de conversão com 3D',
  cover:'<img src="assets/cava.jpg" alt="Landing page da miniescavadeira Vuze X15">',
- link:'https://jackdsgn.github.io/cava-vuze-x15/',
+ links:[['Ver site ao vivo','https://jackdsgn.github.io/cava-vuze-x15/'],['Código no GitHub','https://github.com/jackdsgn/cava-vuze-x15']],
  h1:'Projeto CAVA · Vuze X15',
  intro:'Landing page conceito para a miniescavadeira Vuze X15-20S V2, com marca fictícia. A máquina em 3D se revela capítulo a capítulo e <b>cada seção leva ao pedido de orçamento.</b>',
  sheet:[['Cliente','Conceito · marca fictícia'],['Ano','2026'],['Serviço','UX · Web design · 3D · Front-end com IA'],['Categoria','Landing page B2B']],
@@ -306,7 +308,7 @@ const C=[
  ]},
 {id:'findata',title:'Projeto FinData',cat:'Fintech · UI animation de dashboard',
  cover:'<video src="../media/findata.mp4" poster="../media/findata.jpg" muted loop playsinline preload="none"></video>',
- link:'https://vimeo.com/1222793501',linkLabel:'Assistir no Vimeo',
+ links:[['Assistir animação','https://vimeo.com/1222793501']],
  h1:'Projeto FinData',
  intro:'Estudo de UI animation para o lançamento de um <b>dashboard fictício de finanças</b> pessoais e empresariais: transições fluidas e linguagem visual limpa para transmitir <b>clareza, controle e crescimento.</b>',
  sheet:[['Cliente','Escola Motion Insider'],['Ano','2026'],['Serviço','UI animation · After Effects · Sound design'],['Categoria','Fintech / Interface digital']],
@@ -317,7 +319,8 @@ const C=[
 ];
 
 const grid=document.getElementById('grid');
-grid.innerHTML=C.map(c=>`<a class="proj ap" href="#case-${c.id}"><div class="media">${c.cover}</div><h3>${c.title}</h3><p class="cat">${c.cat}</p><span class="more">Ver case completo →</span></a>`).join('');
+const lk=(c,cls)=>c.links?`<div class="${cls}">${c.links.map(l=>`<a class="btn ${cls==='live'?'d':'w'}" href="${l[1]}" target="_blank" rel="noopener">${l[0]} ↗</a>`).join('')}</div>`:'';
+grid.innerHTML=C.map(c=>`<div class="item ap"><a class="proj" href="#case-${c.id}"><div class="media">${c.cover}</div><h3>${c.title}</h3><p class="cat">${c.cat}</p><span class="more">Ver case completo →</span></a>${lk(c,'live')}</div>`).join('');
 
 const vh=document.getElementById('v-home'),vc=document.getElementById('v-case'),vs=document.getElementById('v-sobre');
 const navs=document.querySelectorAll('[data-nav]');
@@ -338,7 +341,7 @@ function route(){
     if(i>-1){
       const c=C[i],n=C[(i+1)%C.length];
       vc.innerHTML=`<article class="case"><h1 class="ap">${c.h1}</h1><p class="intro ap">${c.intro}</p>
-      ${c.link?`<div class="btns ap"><a class="btn w" href="${c.link}" target="_blank" rel="noopener">${c.linkLabel||'Ver página publicada'} ↗</a></div>`:''}
+      ${c.links?`<div class="btns ap">${c.links.map((l,k)=>`<a class="btn ${k?'d':'w'}" href="${l[1]}" target="_blank" rel="noopener">${l[0]} ↗</a>`).join('')}</div>`:''}
       <div class="sheet ap">${c.sheet.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join('')}</div>
       <div class="media ap${c.tall?' tall':''}">${c.tall||c.cover}</div>${c.capt?`<p class="capt">${c.capt}</p>`:''}
       ${c.blocks.map(b=>`<div class="blk ap"><h3>${b[0]}</h3>${b[1]}</div>`).join('')}
