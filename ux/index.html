@@ -114,6 +114,9 @@ footer div{display:flex;gap:14px}footer a{text-decoration:none;color:var(--soft)
 .sheet small{display:block;color:var(--muted);font-size:13px;margin-bottom:4px}
 .sheet b{font-weight:500;font-size:15px;line-height:1.35;display:block}
 .case .media{margin-bottom:8px}
+.capt{font-size:13px;color:var(--muted);margin-top:4px}
+.shots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:20px}
+.shots img{width:100%;border-radius:12px;border:1px solid var(--line)}
 .case .media.tall{aspect-ratio:9/16;max-width:320px;margin-inline:auto}
 .blk{padding-top:44px}
 .blk h3{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
@@ -141,6 +144,7 @@ th{font-size:13px;font-weight:500;color:var(--muted)}
 @media (max-width:520px){
   .sheet{grid-template-columns:1fr 1fr}
   .stack{grid-template-columns:1fr}
+  .shots{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero{padding-top:48px}
   table{font-size:14px}
 }
@@ -226,12 +230,10 @@ const STACK=[
 ];
 document.getElementById('stack').innerHTML=STACK.map(s=>`<div class="ap">${s[2]}<p><b>${s[0]}</b><span>${s[1]}</span></p></div>`).join('');
 
-const phones=(bg,acc,lbl)=>`<div class="dr" style="background:${bg};--acc:${acc}"><p class="lbl">${lbl}</p><div class="ph" style="right:30%;transform:rotate(-7deg)"><i></i><i></i><i></i><i></i></div><div class="ph" style="right:7%;bottom:-20%"><i></i><i></i><i></i><i></i></div></div>`;
-const browser=(bg,acc)=>`<div class="dr" style="background:${bg};--acc:${acc}"><div class="win"><i></i><i></i><i></i><i></i></div></div>`;
 
 const C=[
 {id:'itau-educa',title:'Itaú Educa+',cat:'App mobile · Pesquisa, UX/UI e protótipo',
- cover:phones('linear-gradient(135deg,#FFB27A,#FF7A1A)','#202030','Educa+'),
+ cover:'<img src="assets/itau-cover.jpg" alt="Capa do Itaú Educa+ com telas do app">',capt:'Capa ilustrativa gerada com IA a partir do conceito do produto.',
  h1:'Projeto Itaú Educa+',
  intro:'Conceito de nova experiência dentro do <b>app Itaú</b>: trilhas, aulas e certificações em uma jornada gamificada de educação financeira e profissional — para quem está começando e para quem quer evoluir. <b>Sem novo app para baixar.</b>',
  sheet:[['Cliente','Projeto acadêmico · EBAC'],['Ano','2026'],['Serviço','Pesquisa · UX/UI · Protótipo'],['Categoria','App mobile · Fintech']],
@@ -243,6 +245,19 @@ const C=[
  ['Microinterações','<p>Toggle, botão com hover, slider e remoção de item da lista com modal de confirmação — cada uma dá retorno claro do estado da ação.</p>'],
  ['Como medir','<table><thead><tr><th>Necessidade</th><th>Tela</th><th>Métrica</th></tr></thead><tbody><tr><td>Começar sem se perder</td><td>Inicial e Trilhas</td><td>Taxa de adoção</td></tr><tr><td>Manter o ritmo</td><td>Aula e Minhas trilhas</td><td>Conclusão e retenção semanal</td></tr><tr><td>Ter reconhecimento</td><td>Certificação e Conquistas</td><td>Certificados compartilhados</td></tr><tr><td>Confiar na experiência</td><td>Toda a jornada</td><td>NPS</td></tr></tbody></table><p style="margin-top:14px">Plano de validação: avaliação heurística seguida de teste com usuários dos dois perfis.</p>'],
  ['Resultado e aprendizado','<p>Entregue à banca com protótipo navegável no Figma, design system, pitch deck e documento de estratégia de produto.</p><p>O feedback da etapa anterior foi direto: a estratégia era clara, mas sem protótipo não dava para provar que funcionava. Refiz a entrega ligando cada tela a uma necessidade, um critério de aceitação e uma métrica. <b>Estratégia sem protótipo é só hipótese.</b></p><p class="note">Projeto acadêmico, conceito não oficial e sem vínculo com o Itaú Unibanco.</p>']
+ ]},
+{id:'upa-facil',title:'UPA Fácil · UPA 24h',cat:'App mobile · Product management e UX/UI',
+ cover:'<img src="assets/upa-cover.jpg" alt="Telas do app UPA Fácil">',
+ h1:'Projeto UPA Fácil',
+ intro:'App para pacientes do SUS fazerem a <b>pré-triagem em casa</b>, escolherem a UPA com menor espera e chegarem com senha gerada. <b>Menos tempo na fila, fluxo melhor na unidade.</b>',
+ sheet:[['Cliente','Coderhouse · Product Management'],['Ano','2024'],['Serviço','Discovery · Product management · UX/UI'],['Categoria','App mobile · Saúde pública']],
+ blocks:[
+ ['O problema','<p>Como aumentar a eficiência do atendimento nas UPAs do estado de São Paulo? Reportagens mostravam esperas de 8 a 9 horas, e a fila era a principal reclamação de quem usa o SUS.</p><p><b>Mercado:</b> 47,3 milhões de habitantes no estado, 70% usam o SUS e 57% buscam a UPA — um potencial de cerca de 26 milhões de usuários.</p>'],
+ ['Para quem','<ul><li><b>Maria, 65 anos:</b> cuida da casa e da família, renda de um salário mínimo. Frustração: esperas de mais de 3 horas, sem lugar para sentar.</li><li><b>Luana:</b> mãe trabalhadora que não pode perder horas de trabalho na fila e precisa saber para onde ir antes de sair de casa.</li></ul>'],
+ ['Ideação & Estratégia','<p>A solução foi estruturada em três pilares:</p><ul><li><b>Triagem antes de sair de casa:</b> perguntas simples de sintomas geram uma previsão da classificação de risco.</li><li><b>Escolha com informação:</b> mapa e lista das UPAs próximas com pessoas aguardando e distância, em cores por lotação.</li><li><b>Senha e check-in:</b> o app gera a senha, válida por 2 horas, e o check-in é feito pelo app ou no totem da unidade.</li></ul>'],
+ ['Fluxo principal',`<div class="flow"><span>Início</span><em>→</em><span>Auto triagem</span><em>→</em><span>Unidades próximas</span><em>→</em><span>Detalhes da unidade</span><em>→</em><span>Senha gerada</span><em>→</em><span>Check-in</span></div><div class="shots">${["inicio","triagem-1","triagem-2","unidades","senha"].map(n=>`<img src="assets/upa/${n}.jpg" alt="Tela ${n} do UPA Fácil" loading="lazy">`).join("")}</div>`],
+ ['Decisões de interface','<ul><li><b>Saída de emergência sempre visível:</b> botões de SAMU 192 e Polícia 193 em todas as telas da triagem — o app não pode atrasar quem precisa de socorro imediato.</li><li><b>Uma pergunta por vez:</b> barra de progresso e respostas em botões grandes, pensando em usuários idosos e pouco familiarizados com apps.</li><li><b>Lotação em cores:</b> azul, laranja e vermelho no mapa e na lista mostram a fila de relance, junto com a distância.</li><li><b>Regras claras:</b> a tela da senha explica validade, check-in e o que acontece se a pessoa não comparecer.</li></ul>'],
+ ['Resultado','<p>Projeto final do curso de Product Management da Coderhouse, feito em grupo de seis pessoas: problema validado com dados de mercado, personas, pesquisa com usuários por formulário e protótipo navegável com jornada completa — de cadastro e login à avaliação da experiência.</p>']
  ]},
 {id:'cut120',title:'Vuze Cut120 · Blips',cat:'Web · Página de produto com exploração 3D',
  cover:'<img src="assets/cut120.jpg" alt="Página da Vuze Cut120" style="object-position:right center">',
@@ -269,9 +284,9 @@ const C=[
  ['Transparência','<p>O rodapé avisa que as imagens são renderizações de um modelo 3D e que a marca é fictícia — confiança também é decisão de UX.</p>']
  ]},
 {id:'informativo',title:'Informativo do Cooperado · Unimed',cat:'Plataforma web · UX, web design e desenvolvimento',
- cover:browser('linear-gradient(135deg,#7FD3A6,#00995D)','#00995D'),
+ cover:'<img src="assets/unimed-cover.jpg" alt="Capa do Informativo do Cooperado em notebook e celular">',capt:'Capa ilustrativa gerada com IA a partir do conceito do produto.',
  h1:'Projeto Informativo do Cooperado',
- intro:'Plataforma web para a <b>Unimed Uberlândia</b> publicar comunicados recorrentes aos médicos cooperados, com <b>acesso individual</b> e leitura confortável no celular e no desktop.',
+ intro:'Plataforma web para a <b>Unimed Uberlândia</b> publicar comunicados recorrentes aos médicos cooperados, com <b>acesso individual</b> e leitura confortável no celular e no desktop. <b>Projeto premiado.</b>',
  sheet:[['Cliente','Unimed Uberlândia'],['Fase','V1 entregue'],['Serviço','UX · Web design · Desenvolvimento com IA'],['Categoria','Plataforma web · Saúde']],
  blocks:[
  ['O desafio','<p>Levar informação exclusiva dos cooperados, toda semana, a um público com pouco tempo, que lê no celular entre atendimentos — sem deixar o conteúdo aberto ao público.</p>'],
@@ -325,7 +340,7 @@ function route(){
       vc.innerHTML=`<article class="case"><h1 class="ap">${c.h1}</h1><p class="intro ap">${c.intro}</p>
       ${c.link?`<div class="btns ap"><a class="btn w" href="${c.link}" target="_blank" rel="noopener">${c.linkLabel||'Ver página publicada'} ↗</a></div>`:''}
       <div class="sheet ap">${c.sheet.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join('')}</div>
-      <div class="media ap${c.tall?' tall':''}">${c.tall||c.cover}</div>
+      <div class="media ap${c.tall?' tall':''}">${c.tall||c.cover}</div>${c.capt?`<p class="capt">${c.capt}</p>`:''}
       ${c.blocks.map(b=>`<div class="blk ap"><h3>${b[0]}</h3>${b[1]}</div>`).join('')}
       <a class="next ap" href="#case-${n.id}"><span><small>Próximo projeto</small><b>${n.title}</b></span><span class="btn d">→</span></a></article>`;
       show(vc);window.scrollTo(0,0);document.title=c.title+' · Jose Jackson';observe();return;
