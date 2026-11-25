@@ -249,6 +249,7 @@ const C=[
  ['Resultado e aprendizado','<p>Entregue à banca com protótipo navegável no Figma, design system, pitch deck e documento de estratégia de produto.</p><p>O feedback da etapa anterior foi direto: a estratégia era clara, mas sem protótipo não dava para provar que funcionava. Refiz a entrega ligando cada tela a uma necessidade, um critério de aceitação e uma métrica. <b>Estratégia sem protótipo é só hipótese.</b></p><p class="note">Projeto acadêmico, conceito não oficial e sem vínculo com o Itaú Unibanco.</p>']
  ]},
 {id:'upa-facil',title:'UPA Fácil · UPA 24h',cat:'App mobile · Product management e UX/UI',
+ links:[['Abrir no Figma','https://www.figma.com/design/0z9qCLUoMa9CPWAJcAaQVN/UPA-24h---App?node-id=0-1&t=T3MnxrE7lw7F5qLQ-1']],
  cover:'<img src="assets/upa-cover.jpg" alt="Telas do app UPA Fácil">',
  h1:'Projeto UPA Fácil',
  intro:'App para pacientes do SUS fazerem a <b>pré-triagem em casa</b>, escolherem a UPA com menor espera e chegarem com senha gerada. <b>Menos tempo na fila, fluxo melhor na unidade.</b>',
@@ -286,6 +287,7 @@ const C=[
  ['Transparência','<p>O rodapé avisa que as imagens são renderizações de um modelo 3D e que a marca é fictícia — confiança também é decisão de UX.</p>']
  ]},
 {id:'informativo',title:'Informativo do Cooperado · Unimed',cat:'Plataforma web · UX, web design e desenvolvimento',
+ links:[['Ver site ao vivo','https://informativodocooperado.framer.website/']],
  cover:'<img src="assets/unimed-cover.jpg" alt="Capa do Informativo do Cooperado em notebook e celular">',capt:'Capa ilustrativa gerada com IA a partir do conceito do produto.',
  h1:'Projeto Informativo do Cooperado',
  intro:'Plataforma web para a <b>Unimed Uberlândia</b> publicar comunicados recorrentes aos médicos cooperados, com <b>acesso individual</b> e leitura confortável no celular e no desktop. <b>Projeto premiado.</b>',
@@ -318,6 +320,8 @@ const C=[
  ]}
 ];
 
+const ORDER=['cut120','cava','upa-facil','itau-educa','informativo','fin-jack','findata'];
+C.sort((a,b)=>ORDER.indexOf(a.id)-ORDER.indexOf(b.id));
 const grid=document.getElementById('grid');
 const lk=(c,cls)=>c.links?`<div class="${cls}">${c.links.map(l=>`<a class="btn ${cls==='live'?'d':'w'}" href="${l[1]}" target="_blank" rel="noopener">${l[0]} ↗</a>`).join('')}</div>`:'';
 grid.innerHTML=C.map(c=>`<div class="item ap"><a class="proj" href="#case-${c.id}"><div class="media">${c.cover}</div><h3>${c.title}</h3><p class="cat">${c.cat}</p><span class="more">Ver case completo →</span></a>${lk(c,'live')}</div>`).join('');
